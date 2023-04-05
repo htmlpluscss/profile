@@ -1,0 +1,17 @@
+:root {
+
+	--color: #000;
+	--bg: #fafafa;
+	--border: rgba(44, 50, 84, 0.17);
+	--transitionDefault: 0s;
+
+	--gap: 20px;
+	--indent: 26px;
+
+}
+
+$desktop: (min-width: 1250px);
+$tablet:  (min-width: 728px) and (max-width: 1249px);
+$mdWidth: (max-width: 1249px);
+$smWidth: (max-width: 727px);
+$xsWidth: (max-width: 359px);

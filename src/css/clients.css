@@ -1,0 +1,53 @@
+.faq {
+
+	margin: var(--margin) 0;
+
+	.accordion {
+
+		max-width: 1060px;
+		margin: auto;
+
+	}
+
+	&__title {
+
+		text-align: center;
+		margin-bottom: 48px;
+
+		@media $smWidth {
+
+			margin-bottom: 24px;
+
+		}
+
+	}
+
+	&__head {
+
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 24px;
+
+		@media $smWidth {
+
+			font-size: 14px;
+
+		}
+
+	}
+
+	&__text {
+
+		font-weight: 300;
+		color: var(--grey);
+
+		@media $mdWidth {
+
+			font-size: 13px;
+			line-height: 20px;
+
+		}
+
+	}
+
+}
