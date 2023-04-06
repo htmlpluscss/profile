@@ -162,8 +162,7 @@ gulp.task('clear', () => del('build'));
 
 gulp.task('copy', () => {
 
-	return gulp.src(['src/**/*.*', '!src/**/*.{css,html,js}'], {since: gulp.lastRun('copy')})
-			.pipe(debug({title: 'copy:'}))
+	return gulp.src(['src/**/*.*', '!src/**/*.{css,html,js}'])
 			.pipe(newer('build'))
 			.pipe(debug({title: 'copy:newer'}))
 			.pipe(gulp.dest('build'))
