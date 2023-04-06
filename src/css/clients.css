@@ -1,52 +1,53 @@
-.faq {
+.clients {
 
-	margin: var(--margin) 0;
+	margin-top: 50px;
+	position: relative;
 
-	.accordion {
+	.center {
 
-		max-width: 1060px;
-		margin: auto;
+		background-image: linear-gradient(200deg, #fafafa, #fff 40%);
+		border-radius: 30px;
+
+	}
+
+	&__box {
+
+		padding: 87px 0 78px;
 
 	}
 
 	&__title {
 
 		text-align: center;
-		margin-bottom: 48px;
-
-		@media $smWidth {
-
-			margin-bottom: 24px;
-
-		}
 
 	}
 
-	&__head {
+	&__intro {
 
-		font-weight: 400;
-		font-size: 18px;
-		line-height: 24px;
-
-		@media $smWidth {
-
-			font-size: 14px;
-
-		}
+		font-size: 20px;
+		opacity: 0.8;
+		margin: 32px auto;
+		max-width: 720px;
+		text-align: center;
 
 	}
 
-	&__text {
+	&__list {
 
-		font-weight: 300;
-		color: var(--grey);
+		display: flex;
+		gap: 64px;
+		margin: 42px auto;
+		max-width: 956px;
+		justify-content: space-between;
 
-		@media $mdWidth {
+	}
 
-			font-size: 13px;
-			line-height: 20px;
+	&__item {
 
-		}
+		flex-grow: 1;
+		display: flex;
+		align-items: center;
+		gap: 16px;
 
 	}
 

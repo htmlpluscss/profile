@@ -35,6 +35,17 @@
 		bottom: -130px;
 		color: #161b2d;
 
+		&::before {
+
+			position: absolute;
+			top: 0;
+			left: -16px;
+			right: -16px;
+			bottom: 0;
+			content: '';
+
+		}
+
 	}
 
 	&__text {

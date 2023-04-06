@@ -1,227 +1,84 @@
 .footer {
 
 	flex-shrink: 0;
+	margin: 34px 0;
 
-	&__top {
+	&__grid {
 
-		display: grid;
-		grid-template-columns: 256px 1fr 296px auto;
-		gap: 72px;
-		padding: 40px 0;
-		border-top: 1px solid #242424;
-		font-weight: 300;
-		color: var(--grey);
-
-		@media $mdWidth {
-
-			display: flex;
-			justify-content: center;
-			flex-wrap: wrap;
-			gap: 32px var(--gap);
-			text-align: center;
-
-		}
-
-		@media $smWidth {
-
-			gap: 24px var(--gap);
-
-		}
-
-	}
-
-	&__logo {
-
-		color: #fff;
-
-		@media $mdWidth {
-
-			display: none;
-
-		}
+		display: flex;
+		justify-content: space-between;
 
 	}
 
 	&__contact {
 
-		white-space: nowrap;
-
-		&-sep {
-
-			display: block;
-
-		}
-
-		@media $tablet {
-
-			display: flex;
-			align-items: center;
-			gap: var(--gap);
-			position: relative;
-
-			&-sep {
-
-				width: 1px;
-				height: 24px;
-				background-color: #242424;
-
-			}
-
-		}
-
-		@media $smWidth {
-
-			width: 100%;
-
-		}
-
-
-	}
-
-	&__address {
-
-		@media $mdWidth {
-
-			width: 476px;
-			order: 4;
-
-		}
-
-		@media $smWidth {
-
-			width: 100%;
-			font-size: 14px;
-			line-height: 20px;
-
-		}
-
-	}
-
-	&__presentation {
-
-		@media $desktop {
-
-			padding-left: 66px;
-
-		}
-
-		@media (max-width: 1300px) {
-
-			padding-left: 0;
-
-		}
-
-		@media $tablet {
-
-			padding-left: var(--gap);
-			border-left: 1px solid #242424;
-
-		}
-
-		@media $smWidth {
-
-			font-size: 14px;
-
-		}
-
-		a {
-
-			letter-spacing: 0.05em;
-			text-decoration: underline;
-
-			@media $desktop {
-
-				transition: var(--transitionDefault);
-
-				&:hover {
-
-					text-decoration-color: transparent;
-
-				}
-
-			}
-
-		}
-
-	}
-
-	&__bottom {
-
-		display: grid;
-		grid-template-columns: 256px 296px 1fr;
-		grid-template-areas: "copyright license rules";
-		gap: 72px;
-		padding: 14px 0 40px;
-		font-weight: 300;
-		color: var(--grey);
-		font-size: 14px;
+		font-size: 24px;
 		line-height: 20px;
-
-		@media $mdWidth {
-
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			gap: 8px;
-			padding: 32px 0;
-			border-top: 1px solid #242424;
-			text-align: center;
-
-		}
+		font-weight: 700;
+		text-align: right;
+		width: 234px;
 
 	}
 
-	&__rules {
+	&__menu {
 
 		display: flex;
-		justify-content: flex-end;
-		grid-area: rules;
-		align-items: center;
-		padding-top: 8px;
+		margin: 18px;
 
-		@media $mdWidth {
+		&-col {
 
-			gap: 0;
-			padding-top: 0;
-			margin-bottom: 16px;
+			width: 170px;
 
 		}
 
+		p {
+
+			font-size: 16px;
+			line-height: 30px;
+			font-weight: 600;
+
+		}
 
 		li {
 
+			font-size: 14px;
 			display: flex;
-
-			& + li::before {
-
-				padding: 0 8px;
-				content: '/';
-
-				@media $mdWidth {
-
-					content: '|';
-					color:  #242424;
-					padding: 0 24px;
-
-				}
-
-			}
+			margin-top: 9px;
 
 		}
 
 		a {
 
-			letter-spacing: 0.05em;
-			text-decoration: underline;
-
 			@media $desktop {
 
-				transition: var(--transitionDefault);
+				display: block;
+				position: relative;
 
 				&:hover {
 
-					text-decoration-color: transparent;
+					&::before {
+
+						transform: scale3d(1, 1, 1);
+						clip-path: polygon(0% 0%, 0% 100%, 50% 100%, 50% 0, 50% 0, 50% 100%, 50% 100%, 0 100%, 100% 100%, 100% 0%);
+
+					}
+
+				}
+
+				&::before {
+
+					transform-origin: 50% 100%;
+					transition: clip-path 0.3s, transform 0.3s cubic-bezier(0.2, 1, 0.8, 1);
+					clip-path: polygon(0% 0%, 0% 100%, 0 100%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%, 100% 100%, 100% 0%);
+					content: '';
+					background-color: currentColor;
+
+					position: absolute;
+					width: 100%;
+					height: 1px;
+					bottom: -3px;
+					left: 0;
+					pointer-events: none;
 
 				}
 
@@ -233,11 +90,14 @@
 
 	&__license {
 
-		grid-area: license;
+		font-size: 13px;
+		line-height: 15px;
+		color: rgba(0,0,0,.7);
 
-		@media $mdWidth {
+		svg {
 
-			order: 3;
+			margin-bottom: 26px;
+			color: #000;
 
 		}
 
@@ -245,7 +105,10 @@
 
 	&__copyright {
 
-		grid-area: copyright;
+		font-size: 13px;
+		line-height: 20px;
+		opacity: 0.4;
+		margin: 10px 0;
 
 	}
 

@@ -1,8 +1,10 @@
 .how-work {
 
+	position: relative;
+
 	.center {
 
-		background-image: linear-gradient(158.43deg, #FAFAFA 1.48%, #FFFFFF 38.51%);
+		background-image: linear-gradient(158deg, #fafafa, #fff 40%);
 		border-radius: 30px;
 
 	}
