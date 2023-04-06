@@ -1,0 +1,502 @@
+{% set title = "eCommerce Data Extraction API Documentation" %}
+
+{% set folder = "documentation" %}
+
+{% extends "template/base.html" %}
+
+{% block content %}
+
+	<article class="center">
+
+		<div class="center__inner">
+
+			<div class="page-text">
+
+				<h1 class="page-text__title">
+					eCommerce Data Extraction <br> API Documentation
+				</h1>
+
+				<div class="page-text__body page-text__body--fw500">
+
+					<p>
+						Welcome to the eCommerce Data Extraction API documentation. This API allows you to extract categories, product details, and entire catalogs from any eCommerce store's website. The API returns the extracted data in JSON format.
+					</p>
+
+					<hr>
+
+					<h2>
+						Authentication
+					</h2>
+
+					<p>
+						The API requires authentication using an API key. You can obtain an API key by signing up for an account on our website. Once you have an API key, you must include it in every API request you make, using the Authorization header:
+					</p>
+
+					<code class="code">
+
+						Authorization: Bearer &lt;API_KEY&gt;
+
+					</code>
+
+					<hr>
+
+					<h2>
+						Retrieving Categories
+					</h2>
+
+					<p>
+						To extract all categories from an eCommerce store, make a GET request to the API endpoint at:
+					</p>
+
+					<code class="code">
+
+						GET https://api.example.com/categories?url=&lt;STORE_URL&gt;
+
+					</code>
+
+					<p>
+						The API endpoint accepts one query parameter:
+					</p>
+
+					<ul>
+
+						<li>
+							url: the URL of the eCommerce store's website.
+						</li>
+
+					</ul>
+
+					<p>
+						For example, to extract all categories from an eCommerce store with the URL https://www.example.com, you would make a GET request to:
+					</p>
+
+					<code class="code">
+
+						GET https://api.example.com/categories?url=https://www.example.com
+
+					</code>
+
+					<p>
+						The API will return a JSON object containing an array of all the categories found on the eCommerce store's website:
+					</p>
+
+					<code class="code">
+
+						{
+
+						<span class="code__pl">
+
+							<span class="code__red">"categories"</span>:
+
+							[
+
+							<span class="code__pl">
+
+								<span class="code__green">"Category 1"</span>,<br>
+								<span class="code__green">"Category 2"</span>,<br>
+								<span class="code__green">"Category 3"</span>,<br>
+
+								...
+
+							</span>
+
+							]
+
+						</span>
+
+						}
+
+					</code>
+
+					<hr>
+
+					<h2>
+						Retrieving Product Details
+					</h2>
+
+					<p>
+						To retrieve product details, make a GET request to the API endpoint at:
+					</p>
+
+					<code class="code">
+
+						GET https://api.example.com/products/details?url=&lt;PRODUCT_URL&gt;
+
+					</code>
+
+					<p>
+						The API endpoint accepts one query parameter:
+					</p>
+
+					<ul>
+
+						<li>
+							url: the URL of the product details page on the eCommerce store's website.
+						</li>
+
+					</ul>
+
+					<p>
+						For example, to retrieve the details for a product with the URL https://www.example.com/product123, you would make a GET request to:
+					</p>
+
+					<code class="code">
+
+						<span class="code__red">GET https:</span><span class="code__green">//api.example.com/products/details?url=https://www.example.com/product123</span>
+
+					</code>
+
+					<hr>
+
+					<h2>
+						Retrieving Entire Catalog (BETA)
+					</h2>
+
+					<p>
+						To extract the entire catalog of an eCommerce store, make a GET request to the API endpoint at:
+					</p>
+
+					<code class="code">
+
+						GET https://api.example.com/products/catalog?url=&lt;STORE_URL&gt;
+
+					</code>
+
+					<p>
+						The API endpoint accepts one query parameter:
+					</p>
+
+					<ul>
+
+						<li>
+							url: the URL of the eCommerce store's website.
+						</li>
+
+					</ul>
+
+					<p>
+						For example, to extract the entire catalog of an eCommerce store with the URL https://www.example.com, you would make a GET request to
+					</p>
+
+					<code class="code">
+
+						GET https://api.example.com/products/catalog?url=https://www.example.com
+
+					</code>
+
+					<hr>
+
+					<h2>
+						Response Format
+					</h2>
+
+					<p>
+						The API returns the extracted data in JSON format. The JSON object contains various product details such as the product ID, name, description, price, image URL, category, and brand, as well as all the categories extracted from the eCommerce store's website.
+					</p>
+
+					<p>
+						Here's an example JSON response for product details:
+					</p>
+
+					<code class="code">
+
+						{
+
+						<span class="code__pl">
+
+							<span class="code__red">"product_id"</span>: <span class="code__green">"123"</span>,<br>
+							<span class="code__red">"name"</span>: <span class="code__green">"Product Name”</span>,<br>
+							<span class="code__red">"description"</span>: <span class="code__green">"This is a description of the product"</span>,<br>
+							<span class="code__red">"price"</span>: <span class="code__green">99.00</span>,<br>
+							<span class="code__red">"currency"</span>: <span class="code__green">USD</span>,<br>
+							<span class="code__red">"image_url"</span>: <span class="code__green">"https://www.example.com/images/product123.jpg"</span>,<br>
+							<span class="code__red">"category"</span>: <span class="code__green">"Electronics"</span>,<br>
+							<span class="code__red">"brand"</span>: <span class="code__green">"Brand Name"</span>,
+
+						</span>
+
+						}
+
+					</code>
+
+					<p>
+						Here's an example JSON response for all categories:
+					</p>
+
+					<code class="code">
+
+						{
+
+						<span class="code__pl">
+
+							<span class="code__red">"categories"</span>:
+
+							[
+
+							<span class="code__pl">
+
+								<span class="code__green">"Electronics"</span>,<br>
+								<span class="code__green">"Smartphones"</span>,<br>
+								<span class="code__green">"Samsung"</span>,<br>
+								<span class="code__green">"Laptops"</span>,<br>
+								<span class="code__green">"Dell"</span>,<br>
+								<span class="code__green">"HP"</span>,<br>
+
+								...
+
+							</span>
+
+							]
+
+						</span>
+
+						}
+
+					</code>
+
+					<p>
+						Here's an example JSON response for an entire catalog:
+					</p>
+
+					<code class="code">
+
+						{
+
+						<span class="code__pl">
+
+							<span class="code__red">"products"</span>:
+
+							[
+
+							<span class="code__pl">
+
+								{
+
+								<span class="code__pl">
+
+									<span class="code__red">"product_id"</span>: <span class="code__green">"123"</span>,<br>
+									<span class="code__red">"name"</span>: <span class="code__green">"Product Name"</span>,<br>
+									<span class="code__red">"description"</span>: <span class="code__green">"This is a description of the product"</span>,<br>
+									<span class="code__red">"price"</span>: <span class="code__green">19.99</span>,<br>
+									<span class="code__red">"image_url"</span>: <span class="code__green">"https://www.example.com/images/product123.jpg"</span>,<br>
+									<span class="code__red">"category"</span>: <span class="code__green">"Electronics"</span>,<br>
+									<span class="code__red">"brand"</span>: <span class="code__green">"Brand Name"</span>
+
+								</span>
+
+								}, <br>
+
+								{
+
+								<span class="code__pl">
+
+									<span class="code__red">"product_id"</span>: <span class="code__green">"456"</span>,<br>
+									<span class="code__red">"name"</span>: <span class="code__green">"Another Product"</span>,<br>
+									<span class="code__red">"description"</span>: <span class="code__green">"This is another product description"</span>,<br>
+									<span class="code__red">"price"</span>: <span class="code__green">29.99</span>,<br>
+									<span class="code__red">"image_url"</span>: <span class="code__green">"https://www.example.com/images/product456.jpg"</span>,<br>
+									<span class="code__red">"category"</span>: <span class="code__green">"Home & Garden"</span>,<br>
+									<span class="code__red">"brand"</span>: <span class="code__green">"Brand Name"</span>
+								</span>
+
+								}, <br>
+
+								...
+
+							</span>
+
+							],
+
+						</span>
+
+						<span class="code__pl">
+
+							<span class="code__red">"categories"</span>:
+
+							[
+
+							<span class="code__pl">
+
+								<span class="code__green">"Electronics"</span>,<br>
+								<span class="code__green">"Smartphones"</span>,<br>
+								<span class="code__green">"Samsung"</span>,<br>
+								<span class="code__green">"Laptops"</span>,<br>
+								<span class="code__green">"Dell"</span>,<br>
+								<span class="code__green">"HP"</span>,<br>
+								<span class="code__green">"Home & Garden"</span>,<br>
+								<span class="code__green">"Furniture"</span>,<br>
+								<span class="code__green">"Kitchen & Dining"</span>,<br>
+
+								...
+
+							</span>
+
+							]
+
+						</span>
+
+						}
+
+					</code>
+
+					<p>
+						The products field contains an array of all the products in the eCommerce store's catalog, and each product object contains various details such as the product ID, name, description, price, image URL, category, and brand. <br>The categories field contains an array of all the categories found on the eCommerce store's website, including any subcategories or nested categories. <br> Note that for the entire catalog endpoint, the API may need to make multiple requests to extract all the products in the store's catalog, depending on how the store's website is structured. The API will return all products and categories found in the store's catalog, but some products or categories may be missing if they are not discoverable via the website's navigation or search functionality.
+					</p>
+
+					<hr>
+
+					<h2>
+						Summary
+					</h2>
+
+					<p>
+						To use this API, you will need to make HTTP requests to the API endpoints with the appropriate parameters. Here are the endpoints for each type of data:
+					</p>
+
+					<p>
+						<b>Categories Endpoint</b>
+					</p>
+
+					<ul>
+
+						<li>
+							Endpoint: /categories
+						</li>
+
+						<li>
+							Method: GET
+						</li>
+
+						<li>
+							Response Format: JSON
+						</li>
+
+						<li>
+							Query Parameters: none
+						</li>
+
+					</ul>
+
+					<p>
+						<b>Product Details Endpoint</b>
+					</p>
+
+					<ul>
+
+						<li>
+							Endpoint: /products/:product_id
+						</li>
+
+						<li>
+							Method: GET
+						</li>
+
+						<li>
+							Response Format: JSON
+						</li>
+
+						<li>
+							Query Parameters: product_id - the unique identifier for the product you want to retrieve details for
+						</li>
+
+					</ul>
+
+					<p>
+						<b>Entire Catalog Endpoint</b>
+					</p>
+
+					<ul>
+
+						<li>
+							Endpoint: /catalog
+						</li>
+
+						<li>
+							Method: GET
+						</li>
+
+						<li>
+							Response Format: JSON
+						</li>
+
+						<li>
+							Query Parameters: none
+						</li>
+
+					</ul>
+
+					<p>
+						For example, to retrieve the details of a specific product with ID 123, you would send a GET request to /products/123. The response would be a JSON object containing all the details of the product.
+					</p>
+
+					<p>
+						Similarly, to retrieve all the categories available in the eCommerce store, you would send a GET request to /categories. The response would be a JSON object containing an array of all the categories.
+					</p>
+
+					<p>
+						Finally, to retrieve the entire catalog of products in the eCommerce store, you would send a GET request to /catalog. The response would be a JSON object containing an array of all products in the catalog and an array of all the categories.
+					</p>
+
+					<p>
+						Please note that depending on the size of the catalog and the number of categories in the store, the response may take some time to generate. However, the API is designed to process requests quickly and efficiently, so you should receive a response within a matter of seconds.
+					</p>
+
+					<hr>
+
+					<h2>
+						Error Handling
+					</h2>
+
+					<p>
+						If an error occurs while processing an API request, the API will return an HTTP status code indicating the error, along with an error message in JSON format. <br> Here are some common HTTP status codes that may be returned by the API:
+					</p>
+
+					<ul>
+
+						<li>
+							400 Bad Request: the API request was invalid or missing required parameters.
+						</li>
+
+						<li>
+							401 Unauthorized: the API request was not authenticated properly.
+						</li>
+
+						<li>
+							404 Not Found: the product details could not be found at the provided URL.
+						</li>
+
+						<li>
+							500 Internal Server Error: an error occurred while processing the API request.
+						</li>
+
+					</ul>
+
+					<hr>
+
+					<h2>
+						Rate Limits
+					</h2>
+
+					<p>
+						To ensure fair usage of the API, we enforce rate limits on API requests. The default rate limit is 100 requests per hour per API key. If you need a higher rate limit, please contact us to discuss your requirements.
+					</p>
+
+					<hr>
+
+					<h2>
+						Conclusion
+					</h2>
+
+					<p>
+						That's it! You should now be able to use the eCommerce Product Details API to retrieve product details from any eCommerce store's website. If you have any questions or issues, please contact us at support@profile.ai.
+					</p>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</article>
+
+{% endblock %}
