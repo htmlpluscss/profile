@@ -53,11 +53,13 @@
 	&--dark {
 
 		background-color: var(--color);
-		color: #fff;
+		color: #f3f3f3;
 
 		@media $desktop {
 
 			&:hover {
+
+				color: #fff;
 
 			}
 
@@ -69,8 +71,8 @@
 
 .input {
 
-	line-height: 24px;
-	padding: 15px 0;
+	line-height: 30px;
+	padding: 15px 20px;
 	font-size: 18px;
 	color: currentColor;
 
@@ -82,13 +84,9 @@
 	filter: none;
 	-webkit-transform: translateZ(0px);
 
-	background-color: transparent;
-	border: 0;
-	border-bottom: 1px solid var(--border);
-	border-radius: 0;
-
-	background-position: right;
-	background-repeat: no-repeat;
+	background-color: #fff;
+	border: 2px solid var(--border);
+	border-radius: 12px;
 
 	@media $smWidth {
 
@@ -96,10 +94,33 @@
 
 	}
 
-	&::placeholder {
+	textarea& {
 
-		opacity: .8;
-		color: var(--bg);
+		resize: none;
+		height: 120px;
+		overflow-y: auto;
+
+		scrollbar-width: thin;
+		scrollbar-color: var(--border) transparent;
+
+		&::-webkit-scrollbar {
+
+			width: 6px;
+			border-radius: 3px;
+			background-color: transparent;
+
+		}
+
+		&::-webkit-scrollbar-thumb {
+
+			border-radius: 3px;
+			background-color: var(--border);
+
+		}
+
+	}
+
+	&::placeholder {
 
 	}
 
@@ -112,7 +133,7 @@
 	&:focus {
 
 		outline: none;
-		border-color: var(--bg);
+		border-color: var(--color);
 
 	}
 
@@ -125,6 +146,88 @@
 	&:valid {
 
 		box-shadow: none;
+
+	}
+
+}
+
+.form {
+
+	&__column {
+
+		display: flex;
+		gap: 105px;
+
+		&-item {
+
+			width: 420px;
+
+		}
+
+	}
+
+	&__title {
+
+		font-size: 24px;
+		line-height: 30px;
+		margin-bottom: 30px;
+		font-weight: 700;
+
+	}
+
+	&__inputbox {
+
+		border: 0;
+		min-width: 0;
+		display: block;
+		position: relative;
+		width: 100%;
+		margin: 10px 0;
+
+		&:focus {
+
+			outline: none;
+
+		}
+
+		&.is-error label {
+
+			color: var(--error);
+
+		}
+
+		.input.is-value {
+
+			border-color: var(--color);
+
+		}
+
+	}
+
+	&__label {
+
+		font-size: 18px;
+		line-height: 30px;
+		margin-bottom: 10px;
+		display: block;
+		opacity: .7;
+
+	}
+
+	&__submit {
+
+		padding: 30px 60px;
+		font-size: 20px;
+		border-radius: 15px;
+		margin-top: 40px;
+
+	}
+
+	&__text {
+
+		display: block;
+		font-size: 24px;
+		line-height: 30px;
 
 	}
 

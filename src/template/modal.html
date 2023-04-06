@@ -4,23 +4,85 @@
 
 			<form action="/send.php" class="modal__item modal__item--demo form">
 
-				<h3 class="form__title h3">
-					Contact us
-				</h3>
+				<div class="form__column">
 
-				<div class="form__fieldset">
+					<div class="form__column-item">
 
-					<div class="form__inputbox">
+						<h3 class="form__title">
+							Contact us
+						</h3>
 
-						<input class="input" name="name" placeholder="Name" required="required">
+						<fieldset class="form__inputbox">
+
+							<label class="form__label" for="modal-demo-name">
+								Name*
+							</label>
+
+							<input class="input" name="name" id="modal-demo-name" required="required">
+
+						</fieldset>
+
+						<fieldset class="form__inputbox">
+
+							<label class="form__label" for="modal-demo-company">
+								Company*
+							</label>
+
+							<input class="input" name="company" id="modal-demo-company" required="required">
+
+						</fieldset>
+
+						<fieldset class="form__inputbox">
+
+							<label class="form__label" for="modal-demo-email">
+								Email*
+							</label>
+
+							<input class="input" name="email" id="modal-demo-email" required="required" type="email">
+
+						</fieldset>
+
+						<fieldset class="form__inputbox">
+
+							<label class="form__label" for="modal-demo-details">
+								Details
+							</label>
+
+							<textarea class="input" name="details" id="modal-demo-details"></textarea>
+
+						</fieldset>
+
+						<button class="btn btn--dark form__submit">
+							Send
+						</button>
+
+					</div>
+
+					<div class="form__column-item">
+
+						<h3 class="form__title">
+							Or email
+						</h3>
+
+						<p class="form__inputbox">
+
+							<span class="form__label">
+								email
+							</span>
+
+							<span class="form__text">
+
+								<a href="mailto:info@profile.ai">
+									info@profile.ai
+								</a>
+
+							</span>
+
+						</p>
 
 					</div>
 
 				</div>
-
-				<button class="btn btn--dark form__submit">
-					Send
-				</button>
 
 			</form>
 
@@ -54,7 +116,7 @@
 					<div class="modal-done__btn">
 
 						<button type="button" class="modal__close btn btn--dark">
-							{% if lang === "en" %}Close{% else %}Закрыть{% endif %}
+							Close
 						</button>
 
 					</div>

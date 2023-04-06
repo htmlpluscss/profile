@@ -84,4 +84,20 @@
 
 	});
 
+	// valid
+
+	[...document.querySelectorAll('.input')].forEach( input => {
+
+		if ( input.required ) {
+
+			input.addEventListener('blur', ()=> input.parentNode.classList.toggle('is-error', input.validity.valid === false));
+
+			input.addEventListener('input', ()=> input.parentNode.classList.toggle('is-error', input.validity.valid === false));
+
+		}
+
+		input.addEventListener('input', ()=> input.classList.toggle('is-value', input.value.length > 0 ));
+
+	});
+
 })(document.querySelectorAll('.form'));
