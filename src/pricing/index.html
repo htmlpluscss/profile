@@ -1,0 +1,51 @@
+{% set title = "Pricing" %}
+
+{% set folder = "pricing" %}
+
+{% extends "template/base.html" %}
+
+{% block content %}
+
+	<article class="center">
+
+		<div class="center__inner">
+
+			<div class="page-text">
+
+				<h1 class="page-text__title h2">
+					{{ title }}
+				</h1>
+
+				<div class="page-text__body">
+
+					<ul>
+
+						<li>
+							All API endpoints have a pricing model based on usage.
+						</li>
+
+						<li>
+							Pricing is calculated based on the number of API requests made per month.
+						</li>
+
+						<li>
+							The first 100 requests are free.
+						</li>
+
+						<li>
+							After the free tier, pricing is $0.01 per request.
+						</li>
+
+						</li>
+
+					</ul>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</article>
+
+{% endblock %}
