@@ -31,31 +31,74 @@
 		margin-top: 41px;
 		font-size: 24px;
 		line-height: 28px;
-		font-weight: 500;
 
-	}
+		&--fw500 {
 
-	b {
+			font-weight: 500;
 
-		font-weight: 700;
+		}
 
-	}
+		& > *:first-child {
 
-	p, li {
+			margin-top: 0;
 
-		& + p {
+		}
 
-			margin-top: 32px;
+		& > *:last-child {
+
+			margin-bottom: 0;
+
+		}
+
+		b {
+
+			font-weight: 700;
 
 		}
 
 		a {
 
 			text-decoration: underline;
+			font-weight: 500;
 
 			&:hover {
 
 				text-decoration-color: transparent;
+
+			}
+
+		}
+
+	}
+
+	p {
+
+		margin: 32px 0;
+
+	}
+
+	ol {
+
+		margin: 32px 0;
+		counter-reset: ol;
+
+		& > li {
+
+			padding-left: 32px;
+
+			&::before {
+
+				counter-increment: ol;
+				content: counter(ol) ".";
+				position: absolute;
+				top: 0;
+				left: 0;
+
+			}
+
+			& + li {
+
+				margin-top: 32px;
 
 			}
 
