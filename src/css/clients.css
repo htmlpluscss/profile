@@ -8,11 +8,23 @@
 		background-image: linear-gradient(200deg, #fafafa, #fff 40%);
 		border-radius: 30px;
 
+		@media $mdWidth {
+
+			padding: 0 var(--indent);
+
+		}
+
 	}
 
 	&__box {
 
 		padding: 87px 0 78px;
+
+		@media $mdWidth {
+
+			padding: 60px 0;
+
+		}
 
 	}
 
@@ -40,11 +52,23 @@
 		max-width: 956px;
 		justify-content: space-between;
 
+		@media $mdWidth {
+
+			justify-content: center;
+			flex-wrap: wrap;
+
+		}
+
 	}
 
 	&__item {
 
-		flex-grow: 1;
+		@media $desktop {
+
+			flex-grow: 1;
+
+		}
+
 		display: flex;
 		align-items: center;
 		gap: 16px;

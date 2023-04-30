@@ -3,6 +3,12 @@
 	flex-shrink: 0;
 	margin: 34px 0;
 
+	@media $mdWidth {
+
+		margin-top: 64px;
+
+	}
+
 	&__grid {
 
 		display: flex;

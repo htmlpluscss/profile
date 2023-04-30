@@ -47,7 +47,17 @@
 
 	.center {
 
-		width: 960px;
+		width: auto;
+		max-width: 100%;
+		margin: 0 var(--indent);
+		padding: 0;
+
+		&__inner {
+
+			width: 960px;
+			padding: 0;
+
+		}
 
 	}
 

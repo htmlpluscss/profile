@@ -7,6 +7,13 @@
 		background-image: linear-gradient(158deg, #fafafa, #fff 40%);
 		border-radius: 30px;
 
+		@media $mdWidth {
+
+			padding: 0 var(--indent);
+			text-align: center;
+
+		}
+
 	}
 
 	&__box {
@@ -28,6 +35,12 @@
 		margin-bottom: 80px;
 		max-width: 960px;
 
+		@media $mdWidth {
+
+			margin-bottom: 36px;
+
+		}
+
 	}
 
 	&__list {
@@ -36,15 +49,33 @@
 		gap: 60px;
 		justify-content: space-between;
 
+		@media $mdWidth {
+
+			flex-wrap: wrap;
+			justify-content: space-around;
+			gap: 0;
+
+		}
+
 	}
 
 	&__item {
 
-		flex-grow: 1;
+		@media $desktop {
+
+			flex-grow: 1;
+
+		}
 
 		svg {
 
 			margin-bottom: 30px;
+
+			@media $mdWidth {
+
+				margin: 30px auto;
+
+			}
 
 		}
 

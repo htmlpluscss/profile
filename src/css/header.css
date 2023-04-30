@@ -23,6 +23,12 @@
 			gap: 28px;
 			font-weight: 500;
 
+			@media $mdWidth {
+
+				gap: 24px;
+
+			}
+
 		}
 
 		a {
