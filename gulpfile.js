@@ -42,7 +42,7 @@ const w3cjs            = require('gulp-w3cjs');
 let config             = null;
 
 const site             = 'profile.ai';
-const domain           = 'profile.ai';
+const domain           = 'profile.htmlpluscss.site';
 
 try {
 
@@ -195,7 +195,7 @@ gulp.task('ftp', () => {
 		.pipe(f)
 		.pipe(replace('css/styles.css', 'css/styles.min.css?' + Date.now()))
 		.pipe(replace('js/scripts.js', 'js/scripts.min.js?' + Date.now()))
-		.pipe(replace('profile.ai', 'profile.htmlpluscss.site'))
+	//	.pipe(replace('profile.ai', 'profile.htmlpluscss.site'))
 		.pipe(f.restore)
 		.pipe(conn.dest(domain));
 
