@@ -3,7 +3,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-/* color: red !important */
+
 }
 
 html {
@@ -37,8 +37,7 @@ body {
 	flex-direction: column;
 	position: relative;
 	background-color: var(--bg);
-/* background-image: url(/css/1.png); */
-background-position: top;
+
 }
 
 a {
@@ -95,6 +94,18 @@ hr {
 	font-size: 64px;
 	line-height: 1;
 
+	@media $mdWidth {
+
+		font-size: 48px;
+
+	}
+
+	@media $smWidth {
+
+		font-size: 36px;
+
+	}
+
 }
 
 .h2 {
@@ -102,6 +113,18 @@ hr {
 	font-weight: 700;
 	font-size: 48px;
 	line-height: 1.25;
+
+	@media $mdWidth {
+
+		font-size: 42px;
+
+	}
+
+	@media $smWidth {
+
+		font-size: 32px;
+
+	}
 
 }
 
@@ -111,6 +134,18 @@ hr {
 	font-size: 32px;
 	line-height: 1.25;
 
+	@media $mdWidth {
+
+		font-size: 28px;
+
+	}
+
+	@media $smWidth {
+
+		font-size: 26px;
+
+	}
+
 }
 
 .h4 {
@@ -118,6 +153,18 @@ hr {
 	font-weight: 500;
 	font-size: 24px;
 	line-height: 1.25;
+
+	@media $mdWidth {
+
+		font-size: 20px;
+
+	}
+
+	@media $smWidth {
+
+		font-size: 18px;
+
+	}
 
 }
 
