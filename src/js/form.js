@@ -1,24 +1,24 @@
+//reCaptcha v3
+
+const PUBLIC_KEY = '6LcsF5cjAAAAAOvoMbdW_JM5UIOLBN1WaDERnoID';
+
+const reCaptcha = () => {
+
+	[...document.querySelectorAll('.form'),document.querySelector('.form-generate')].forEach( form => {
+
+		form.removeEventListener('input', reCaptcha);
+
+	});
+
+	const script = document.createElement('script');
+
+	script.src = 'https://www.google.com/recaptcha/api.js?render=' + PUBLIC_KEY;
+
+	document.head.appendChild(script);
+
+}
+
 ( forms => {
-
-	//reCaptcha v3
-
-	const PUBLIC_KEY = '6LcsF5cjAAAAAOvoMbdW_JM5UIOLBN1WaDERnoID';
-
-	const reCaptcha = () => {
-
-		[...forms].forEach( form => {
-
-			form.removeEventListener('input', reCaptcha);
-
-		});
-
-		const script = document.createElement('script');
-
-		script.src = 'https://www.google.com/recaptcha/api.js?render=' + PUBLIC_KEY;
-
-		document.head.appendChild(script);
-
-	}
 
 	[...forms].forEach( form => {
 
@@ -101,3 +101,60 @@
 	});
 
 })(document.querySelectorAll('.form'));
+
+( formGenerate => {
+
+	formGenerate.addEventListener('input', reCaptcha);
+
+	formGenerate.addEventListener('submit', event => {
+
+		event.preventDefault();
+
+		if (typeof(grecaptcha) === 'undefined') {
+
+			alert('Error! Google reCaptcha');
+
+		} else {
+
+			grecaptcha.ready( () => {
+
+				grecaptcha.execute(PUBLIC_KEY).then( token => {
+
+					const formData = new FormData(formGenerate),
+						  btn = formGenerate.querySelector('.form-generate__submit');
+
+					formGenerate.classList.add('is-loading');
+
+					formData.append('g_recaptcha_response', token);
+
+					btn.disabled = true;
+
+					fetch(formGenerate.getAttribute('action'), {
+						method: 'POST',
+						body: formData
+					})
+					.then(response => response.text())
+					.then(result => {
+
+						console.log(result);
+
+						formGenerate.querySelector('.form-generate__result').innerHTML = result;
+
+						btn.disabled = false;
+
+						formGenerate.classList.remove('is-loading');
+
+						formGenerate.classList.add('is-finish');
+
+					});
+
+				});
+
+			});
+
+		}
+
+	});
+
+
+})(document.querySelector('.form-generate'));

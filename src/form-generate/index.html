@@ -1,0 +1,63 @@
+{% set title = "Paste your link" %}
+
+{% set description = "Convert data from URL into JSON, CSV, or any other format within milliseconds." %}
+
+{% extends "template/base.html" %}
+
+{% block content %}
+
+	<form action="/form-generate/result/" class="form-generate">
+
+		<div class="center">
+
+			<div class="form-generate__inner">
+
+				<div class="form-generate__start">
+
+					<h1 class="form-generate__title h2">
+						{{ title }}
+					</h1>
+
+					<p class="form-generate__text">
+						{{ description }}
+					</p>
+
+					<p class="form-generate__label h3">
+						Your link
+					</p>
+
+					<input class="input" name="link" placeholder="your link" required="required">
+
+					<button class="form-generate__submit btn btn--dark">
+						Generate
+					</button>
+
+				</div>
+
+				<div class="form-generate__load">
+
+					<p class="form-generate__title h2">
+						Please wait
+					</p>
+
+					<p class="form-generate__text">
+						Do not close the tab until the code is generated
+					</p>
+
+					<div class="form-generate__anim">
+
+					</div>
+
+				</div>
+
+				<div class="form-generate__result">
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</form>
+
+{% endblock %}

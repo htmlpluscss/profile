@@ -196,3 +196,12 @@
   font-weight: 800;
   src: url('/fonts/poppins-v20-latin-800.woff2');
 }
+
+
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/inter-v12-latin-500.woff2');
+}
