@@ -9,8 +9,6 @@
 						const formData = new FormData(form),
 							  btn = form.querySelector('.form__submit');
 
-						formData.append('g_recaptcha_response', token);
-
 						btn.disabled = true;
 
 						fetch(form.getAttribute('action'), {
@@ -76,8 +74,6 @@
 							  btn = formGenerate.querySelector('.form-generate__submit');
 
 						formGenerate.classList.add('is-loading');
-
-						formData.append('g_recaptcha_response', token);
 
 						btn.disabled = true;
 

@@ -134,6 +134,7 @@
 			font-family: inherit;
 			padding: 20px 24px;
 			margin: 10px 0;
+			position: relative;
 
 			@media $smWidth {
 
