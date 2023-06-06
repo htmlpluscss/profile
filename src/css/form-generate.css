@@ -4,11 +4,41 @@
 
 		width: 468px;
 
+		@media $mdWidth {
+
+			margin: auto;
+
+		}
+
+		@media $smWidth {
+
+			width: auto;
+
+			.input {
+
+				text-align: center;
+
+			}
+
+		}
+
 	}
 
 	&__result {
 
 		width: 468px;
+
+		@media $mdWidth {
+
+			margin: 32px auto;
+
+		}
+
+		@media $smWidth {
+
+			width: auto;
+
+		}
 
 		.code {
 
@@ -24,7 +54,15 @@
 			line-height: 16px;
 			font-family: 'Inter';
 
-			white-space: pre;
+			white-space: pre-wrap;
+
+			@media $smWidth {
+
+				padding: 16px;
+				font-size: 12px;
+				margin: 0 calc( var(--indent) * -1);
+
+			}
 
 		}
 
@@ -46,6 +84,14 @@
 		width: 468px;
 		margin: auto;
 
+		@media $smWidth {
+
+			width: auto;
+			top: 96px;
+			padding: 0 var(--indent);
+
+		}
+
 	}
 
 	&__inner {
@@ -60,22 +106,25 @@
 		margin: 48px auto;
 
 		padding: 136px 0 200px;
-		display: flex;
-		justify-content: center;
+
+		@media $desktop {
+
+			display: flex;
+			justify-content: center;
+
+		}
 
 		@media $mdWidth {
 
 			padding: 96px 0;
-			max-width: 720px;
 			margin: 36px auto;
 
 		}
 
 		@media $smWidth {
 
-			padding: 48px 24px;
-			max-width: 480px;
-			margin: 32px auto;
+			padding: 96px var(--indent);
+			margin: var(--indent) 0;
 
 		}
 
@@ -85,6 +134,12 @@
 
 		padding: 60px;
 		justify-content: space-between;
+
+		@media $smWidth {
+
+			padding: 36px var(--indent) 0;
+
+		}
 
 	}
 
@@ -107,6 +162,14 @@
 		margin-bottom: 20px;
 		font-size: 36px;
 		line-height: 48px;
+
+		@media $smWidth {
+
+			font-size: 28px;
+			line-height: 36px;
+			text-align: center;
+
+		}
 
 	}
 
@@ -145,6 +208,12 @@
 	&.is-finish &__submit {
 
 		max-width: 209px;
+
+		@media $smWidth {
+
+			max-width: 100%;
+
+		}
 
 	}
 

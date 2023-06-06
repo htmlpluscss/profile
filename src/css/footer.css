@@ -5,7 +5,13 @@
 
 	@media $mdWidth {
 
-		margin-top: 64px;
+		margin-top: 72px;
+
+	}
+
+	@media $smWidth {
+
+		margin-bottom: 20px;
 
 	}
 
@@ -13,6 +19,12 @@
 
 		display: flex;
 		justify-content: space-between;
+
+		@media $smWidth {
+
+			display: block;
+
+		}
 
 	}
 
@@ -24,12 +36,26 @@
 		text-align: right;
 		width: 234px;
 
+		@media $smWidth {
+
+			text-align: left;
+			font-size: 20px;
+			margin-bottom: 20px;
+
+		}
+
 	}
 
 	&__menu {
 
 		display: flex;
 		margin: 18px;
+
+		@media $smWidth {
+
+			margin: 40px 0;
+
+		}
 
 		&-col {
 
@@ -104,6 +130,14 @@
 
 			margin-bottom: 26px;
 			color: #000;
+
+			@media $smWidth {
+
+				margin-bottom: 16px;
+				width: 110px;
+				height: auto;
+
+			}
 
 		}
 

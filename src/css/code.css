@@ -11,6 +11,16 @@
 	font-family: 'Courier';
 	font-size: 16px;
 	line-height: 35px;
+	overflow: hidden;
+	word-break: break-all;
+
+	@media $smWidth {
+
+		font-size: 12px;
+		padding: 16px;
+		line-height: 2;
+
+	}
 
 	&::selection {
 
@@ -35,6 +45,12 @@
 
 		display: block;
 		padding-left: 20px;
+
+		@media $smWidth {
+
+			padding-left: 16px;
+
+		}
 
 	}
 

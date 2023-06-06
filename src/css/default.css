@@ -103,6 +103,7 @@ hr {
 	@media $smWidth {
 
 		font-size: 36px;
+		line-height: 40px;
 
 	}
 
@@ -142,7 +143,7 @@ hr {
 
 	@media $smWidth {
 
-		font-size: 26px;
+		font-size: 20px;
 
 	}
 
@@ -163,6 +164,7 @@ hr {
 	@media $smWidth {
 
 		font-size: 18px;
+		line-height: 30px;
 
 	}
 

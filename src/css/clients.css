@@ -3,6 +3,12 @@
 	margin-top: 50px;
 	position: relative;
 
+	@media $smWidth {
+
+		margin: 0;
+
+	}
+
 	.center {
 
 		background-image: linear-gradient(200deg, #fafafa, #fff 40%);
@@ -11,6 +17,12 @@
 		@media $mdWidth {
 
 			padding: 0 var(--indent);
+
+		}
+
+		@media $smWidth {
+
+			border-radius: 0;
 
 		}
 
@@ -42,6 +54,13 @@
 		max-width: 720px;
 		text-align: center;
 
+		@media $smWidth {
+
+			font-size: 16px;
+			line-height: 25px;
+
+		}
+
 	}
 
 	&__list {
@@ -59,6 +78,13 @@
 
 		}
 
+		@media $smWidth {
+
+			gap: 40px;
+			margin: 0;
+
+		}
+
 	}
 
 	&__item {
@@ -66,6 +92,17 @@
 		@media $desktop {
 
 			flex-grow: 1;
+
+		}
+
+		@media $smWidth {
+
+			img {
+
+				width: 40px;
+				height: 40px;
+
+			}
 
 		}
 

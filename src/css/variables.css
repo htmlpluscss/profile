@@ -13,7 +13,7 @@
 }
 
 $desktop: (min-width: 1250px);
-$tablet:  (min-width: 728px) and (max-width: 1249px);
+$tablet:  (min-width: 768px) and (max-width: 1249px);
 $mdWidth: (max-width: 1249px);
-$smWidth: (max-width: 727px);
+$smWidth: (max-width: 767px);
 $xsWidth: (max-width: 359px);

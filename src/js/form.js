@@ -104,57 +104,60 @@ const reCaptcha = () => {
 
 ( formGenerate => {
 
-	formGenerate.addEventListener('input', reCaptcha);
+	if ( formGenerate ) {
 
-	formGenerate.addEventListener('submit', event => {
+		formGenerate.addEventListener('input', reCaptcha);
 
-		event.preventDefault();
+		formGenerate.addEventListener('submit', event => {
 
-		if (typeof(grecaptcha) === 'undefined') {
+			event.preventDefault();
 
-			alert('Error! Google reCaptcha');
+			if (typeof(grecaptcha) === 'undefined') {
 
-		} else {
+				alert('Error! Google reCaptcha');
 
-			grecaptcha.ready( () => {
+			} else {
 
-				grecaptcha.execute(PUBLIC_KEY).then( token => {
+				grecaptcha.ready( () => {
 
-					const formData = new FormData(formGenerate),
-						  btn = formGenerate.querySelector('.form-generate__submit');
+					grecaptcha.execute(PUBLIC_KEY).then( token => {
 
-					formGenerate.classList.add('is-loading');
+						const formData = new FormData(formGenerate),
+							  btn = formGenerate.querySelector('.form-generate__submit');
 
-					formData.append('g_recaptcha_response', token);
+						formGenerate.classList.add('is-loading');
 
-					btn.disabled = true;
+						formData.append('g_recaptcha_response', token);
 
-					fetch(formGenerate.getAttribute('action'), {
-						method: 'POST',
-						body: formData
-					})
-					.then(response => response.text())
-					.then(result => {
+						btn.disabled = true;
 
-						console.log(result);
+						fetch(formGenerate.getAttribute('action'), {
+							method: 'POST',
+							body: formData
+						})
+						.then(response => response.text())
+						.then(result => {
 
-						formGenerate.querySelector('.form-generate__result').innerHTML = result;
+							console.log(result);
 
-						btn.disabled = false;
+							formGenerate.querySelector('.form-generate__result').innerHTML = result;
 
-						formGenerate.classList.remove('is-loading');
+							btn.disabled = false;
 
-						formGenerate.classList.add('is-finish');
+							formGenerate.classList.remove('is-loading');
+
+							formGenerate.classList.add('is-finish');
+
+						});
 
 					});
 
 				});
 
-			});
+			}
 
-		}
+		});
 
-	});
-
+	}
 
 })(document.querySelector('.form-generate'));

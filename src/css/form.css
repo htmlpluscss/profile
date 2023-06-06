@@ -44,12 +44,6 @@
 	font-size: 16px;
 	border-radius: 12px;
 
-	@media $smWidth {
-
-		font-size: 16px;
-
-	}
-
 	&--dark {
 
 		background-color: var(--color);
@@ -163,9 +157,28 @@
 		display: flex;
 		gap: 105px;
 
+		@media $mdWidth {
+
+			gap: 24px;
+
+		}
+
+		@media $smWidth {
+
+			display: block;
+
+		}
+
 		&-item {
 
 			width: 420px;
+
+			@media $smWidth {
+
+				width: auto;
+				margin: 24px 0;
+
+			}
 
 		}
 
@@ -225,6 +238,13 @@
 		font-size: 20px;
 		border-radius: 15px;
 		margin-top: 40px;
+
+		@media $smWidth {
+
+			width: 100%;
+			font-size: 20px;
+
+		}
 
 	}
 

@@ -3,11 +3,35 @@
 	flex-shrink: 0;
 	margin: 30px 0;
 
+	@media $smWidth {
+
+		margin: 0;
+		display: flex;
+		flex-grow: 1;
+
+		.center {
+
+			display: flex;
+			flex-grow: 1;
+			margin: 0;
+			padding: 0;
+
+		}
+
+	}
+
 	&__flex {
 
 		display: flex;
 		align-items: center;
 		gap: 28px;
+
+		@media $smWidth {
+
+			flex-direction: column;
+			width: 100%;
+
+		}
 
 	}
 
@@ -16,6 +40,19 @@
 		flex-grow: 1;
 		display: flex;
 		justify-content: flex-end;
+
+		@media $smWidth {
+
+			display: none;
+			flex-grow: 0;
+
+			.menu-show & {
+
+				display: block;
+
+			}
+
+		}
 
 		ul {
 
@@ -26,6 +63,12 @@
 			@media $mdWidth {
 
 				gap: 24px;
+
+			}
+
+			@media $smWidth {
+
+				display: block;
 
 			}
 
@@ -68,6 +111,16 @@
 
 			}
 
+			@media $smWidth {
+
+				font-size: 20px;
+				line-height: 28px;
+				display: block;
+				text-align: center;
+				margin: 32px 0;
+
+			}
+
 		}
 
 	}
@@ -75,6 +128,135 @@
 	&__logo {
 
 		flex-shrink: 0;
+
+		@media $smWidth {
+
+			background-color: #000;
+			color: #fff;
+			padding: 14px;
+			display: flex;
+			justify-content: center;
+			width: 100%;
+
+			svg {
+
+				width: 100px;
+				height: auto;
+
+			}
+
+		}
+
+	}
+
+	&__btn {
+
+		@media $smWidth {
+
+			display: none;
+			width: 100%;
+			padding: var(--indent);
+
+			.btn {
+
+				width: 100%;
+				font-size: 20px;
+				line-height: 28px;
+
+			}
+
+			.menu-show & {
+
+				display: block;
+
+			}
+
+		}
+
+	}
+
+	&__toggle-menu {
+
+		display: none;
+
+		@media $smWidth {
+
+			display: block;
+
+			position: absolute;
+			top: 14px;
+			right: 20px;
+
+			svg {
+
+				fill: none;
+				stroke: #fff;
+
+				path + path {
+
+					opacity: 0;
+
+				}
+
+				.menu-show & {
+
+					path {
+
+						opacity: 0;
+
+						& + path {
+
+							opacity: 1;
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+	&__email {
+
+		display: none;
+		margin-top: auto;
+		padding: 48px 0;
+		text-align: center;
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 20px;
+		color: #000;
+		opacity: 0.32;
+
+		@media $smWidth {
+
+			.menu-show & {
+
+				display: block;
+
+			}
+
+		}
+
+	}
+
+}
+
+
+@media $smWidth {
+
+	.menu-show {
+
+		.main,
+		.footer {
+
+			display: none;
+
+		}
 
 	}
 

@@ -5,12 +5,33 @@
 	border-radius: 32px;
 	margin: 72px auto;
 
+	@media $smWidth {
+
+		margin: 0 calc( var(--indent) * -1);
+		padding: 72px var(--indent);
+		border-radius: 0;
+
+	}
+
 	&__title {
 
 		text-align: center;
 		font-size: 48px;
 		line-height: 56px;
 		font-weight: 900;
+
+		@media $mdWidth {
+
+			font-size: 42px;
+			line-height: 1.4;
+
+		}
+
+		@media $smWidth {
+
+			font-size: 32px;
+
+		}
 
 	}
 
@@ -19,6 +40,13 @@
 		margin-top: 41px;
 		font-size: 24px;
 		line-height: 28px;
+
+		@media $mdWidth {
+
+			font-size: 18px;
+			line-height: 1.4;
+
+		}
 
 		&--fw500 {
 
@@ -70,6 +98,14 @@
 		font-size: 32px;
 		line-height: 38px;
 		margin: 32px 0;
+
+		@media $mdWidth {
+
+			line-height: 1.4;
+			margin: 28px 0;
+			font-size: 28px;
+
+		}
 
 	}
 
