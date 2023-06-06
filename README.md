@@ -1,8 +1,8 @@
 # profile.ai
-[build](https://profile.ai/)
+[build](https://profile.htmlpluscss.site/)
 
 ## support browsers:
 **Android >= 5**
 
 ### Working hours:
-00:00
+10:00
