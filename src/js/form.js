@@ -1,42 +1,10 @@
-//reCaptcha v3
-
-const PUBLIC_KEY = '6LcsF5cjAAAAAOvoMbdW_JM5UIOLBN1WaDERnoID';
-
-const reCaptcha = () => {
-
-	[...document.querySelectorAll('.form'),document.querySelector('.form-generate')].forEach( form => {
-
-		form.removeEventListener('input', reCaptcha);
-
-	});
-
-	const script = document.createElement('script');
-
-	script.src = 'https://www.google.com/recaptcha/api.js?render=' + PUBLIC_KEY;
-
-	document.head.appendChild(script);
-
-}
-
 ( forms => {
 
 	[...forms].forEach( form => {
 
-		form.addEventListener('input', reCaptcha);
-
 		form.addEventListener('submit', event => {
 
 			event.preventDefault();
-
-			if (typeof(grecaptcha) === 'undefined') {
-
-				alert('Error! Google reCaptcha');
-
-			} else {
-
-				grecaptcha.ready( () => {
-
-					grecaptcha.execute(PUBLIC_KEY).then( token => {
 
 						const formData = new FormData(form),
 							  btn = form.querySelector('.form__submit');
@@ -74,12 +42,6 @@ const reCaptcha = () => {
 
 						});
 
-					});
-
-				});
-
-			}
-
 		});
 
 	});
@@ -106,21 +68,9 @@ const reCaptcha = () => {
 
 	if ( formGenerate ) {
 
-		formGenerate.addEventListener('input', reCaptcha);
-
 		formGenerate.addEventListener('submit', event => {
 
 			event.preventDefault();
-
-			if (typeof(grecaptcha) === 'undefined') {
-
-				alert('Error! Google reCaptcha');
-
-			} else {
-
-				grecaptcha.ready( () => {
-
-					grecaptcha.execute(PUBLIC_KEY).then( token => {
 
 						const formData = new FormData(formGenerate),
 							  btn = formGenerate.querySelector('.form-generate__submit');
@@ -149,12 +99,6 @@ const reCaptcha = () => {
 							formGenerate.classList.add('is-finish');
 
 						});
-
-					});
-
-				});
-
-			}
 
 		});
 
