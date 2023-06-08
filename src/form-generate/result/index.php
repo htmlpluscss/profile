@@ -2,56 +2,6 @@
 
 sleep(5);
 
-echo '
-<code class="code">
-{
-
-company_id
-company_name
-company_legal_name
-company_logo
-founded_on
-annual_revenue
-headcount
-vertical
-location: {
-            country,
-            city,
-            state,
-            zip,
-            hq_address,
-            other_addresses:
-                    [ location_n, location_n1, ...]
-phone_number
-emails: {
-           support
-           sales
-           info
-           others: [sample@gmail.com,
-                      sample_1@gmail.com,
-                      ... ]
-catalog: {
-          product_1: {
-                    product_id
-                    product_name(string)
-                    product_description
-                    product_price
-                    product_specifications
-                    product_images: [
-                                   image_id, image_id, image_id
-                                                         ]
-                    product_type
-                    product_subcategory
-                    ... }
-                 }
-social_networks_info: { ig_info: {followers, ....},
-                                                  fb_info: {followers, ....},
-                                                  tw_info: {followers, ....},
-                                                  li_info: {followers, ....},
-                                                  etc.} ,
-...
-}
-</code>
-';
+echo '{"company_id":1,"company_name":"DG","company_legal_name":"Dolce & Gabbana","company_logo":"static/logo/dg.png","founded_on":"1985 Italia","annual_revenue":"1,3 billion $","headcount":"3,150","location":{"country":"Italia","city":"Milan","state":"Italia","other_addresses":"none"},"phone_number":"+395432464","emails":{"support":"support@dg.com","sales":"support@dolcegabbana.com","info":"https://www.dolcegabbana.com/en/customer-service-privacy-security/contact-us/contact-form.html","others":[]},"catalog":{"product_1":{"product_id":"18fdfnvj9kmnKdw3","product_name":"Summer Vibes Eau de Toilette","product_description":"The Dolce&Gabbana Light Blue Summer Vibes Eau de Toilette fragrance captures the dream of a romantic escape to Capri. The iconic Light Blue fragrance is tinged with the fresh touch of Calabrian Bergamot accompanied by the sweetness of fruits and the soothing touch of woody notes.","product_price":"£74","product_specifications":"Dolce&Gabbana Light Blue Summer Vibes Eau de Toilette: a fresh fragrance full of passion. The fragrance was created by Olivier Cresp exclusively for Dolce&Gabbana.","product_images":{"1image_dg_231dsa2131":"https://www.dolcegabbana.com/dw/image/v2/AAGA_PRD/on/demandware.static/-/Sites-15/default/dw61503e3b/images/zoom/VT007KVT000_9V000_0.jpg?sw=1484&sh=1888&sm=fit","2image_dg_231dsa2131":"https://dolcegabbana-cdn.thron.com/delivery/public/image/dolcegabbana/9bc46efc-761e-49b6-b19e-433a228da96a/n7kur9/std/1194x1416/dicover-all-man"},"product_type":"Water Toilette","product_subcategory":"Perfumes"}},"social_networks_info":{"ig_info":{},"fb_info":{},"tw_info":{},"li_info":{},"etc":{}}}';
 
 ?>

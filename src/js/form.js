@@ -66,6 +66,22 @@
 
 	if ( formGenerate ) {
 
+		const jsonToHtml = obj => {
+
+			let result = "";
+
+			for ( let key in obj ) {
+
+				let data = obj[key];
+
+				result += `<li>${key}: ${ typeof data === 'object' ? jsonToHtml(data) : data } </li>`;
+
+			}
+
+			return "{<ul>" + result + "</ul>}";
+
+		}
+
 		formGenerate.addEventListener('submit', event => {
 
 			event.preventDefault();
@@ -81,12 +97,12 @@
 							method: 'POST',
 							body: formData
 						})
-						.then(response => response.text())
+						.then(response => response.json())
 						.then(result => {
 
 							console.log(result);
 
-							formGenerate.querySelector('.form-generate__result').innerHTML = result;
+							formGenerate.querySelector('.form-generate__result .code').innerHTML = jsonToHtml(result);
 
 							btn.disabled = false;
 
