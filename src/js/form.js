@@ -74,11 +74,11 @@
 
 				let data = obj[key];
 
-				result += `<li>${key}: ${ typeof data === 'object' ? jsonToHtml(data) : data } </li>`;
+				result += `<li><span class="code__red">${key}:</span> ${ typeof data === 'object' ? jsonToHtml(data) : data } </li>`;
 
 			}
 
-			return "{<ul>" + result + "</ul>}";
+			return `<span class="code__white">{</span><ul class="code__green">${result}</ul><span class="code__white">}</span>`;
 
 		}
 

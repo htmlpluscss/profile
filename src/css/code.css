@@ -41,6 +41,12 @@
 
 	}
 
+	&__white {
+
+		color: #fff;
+
+	}
+
 	&__pl {
 
 		display: block;
