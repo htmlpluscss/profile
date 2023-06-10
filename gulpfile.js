@@ -41,7 +41,7 @@ const w3cjs            = require('gulp-w3cjs');
 
 let config             = null;
 
-const site             = 'undermicro.ai';
+const site             = 'undermicro.com';
 const domain           = 'profile.htmlpluscss.site';
 
 try {

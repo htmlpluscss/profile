@@ -128,6 +128,8 @@
 	&__logo {
 
 		flex-shrink: 0;
+		font-weight: 700;
+		font-size: 32px;
 
 		@media $smWidth {
 
@@ -137,13 +139,7 @@
 			display: flex;
 			justify-content: center;
 			width: 100%;
-
-			svg {
-
-				width: 100px;
-				height: auto;
-
-			}
+			font-size: 24px;
 
 		}
 

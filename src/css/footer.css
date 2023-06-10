@@ -126,18 +126,20 @@
 		line-height: 15px;
 		color: rgba(0,0,0,.7);
 
-		svg {
+	}
 
-			margin-bottom: 26px;
-			color: #000;
+	&__logo {
 
-			@media $smWidth {
+		display: block;
+		font-weight: 700;
+		font-size: 32px;
+		margin-bottom: 26px;
+		color: rgba(0,0,0,1);
 
-				margin-bottom: 16px;
-				width: 110px;
-				height: auto;
+		@media $smWidth {
 
-			}
+			font-size: 24px;
+			margin-bottom: 16px;
 
 		}
 
